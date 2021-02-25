@@ -4,9 +4,6 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-//temp hardcoded tweet data
-
-
 $(document).ready(() => {
 
   //listening for tweet submission
@@ -29,6 +26,7 @@ $(document).ready(() => {
     if (textInput.length < 145) {
 
       $.post('/tweets', textInput, function() { 
+        // removes error alerts after successful post
         $('#empty-tweet').slideUp('linear');
         $('#long-tweet').slideUp('linear');
       })

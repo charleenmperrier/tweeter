@@ -41,3 +41,23 @@ main {
   font-weight: 300;
 }
 
+@media only screen and (min-width: 768px) {
+  body {
+    display: flex;
+  }
+  body header {
+    max-width: 30%;
+    
+    margin: 5%;
+    margin-top: 200px;
+    
+
+  }
+  .layout-change {
+    display: flex;
+  }
+
+  .new-tweet {
+    margin-top: 200px;
+  }
+}
