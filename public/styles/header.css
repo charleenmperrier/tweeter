@@ -1,0 +1,13 @@
+.body-header {
+  margin-top: 115px;
+  height: 400px;
+  width: 100%;
+  background-color: #f6e7cb;
+  background-image: url("https://www.transparenttextures.com/patterns/subtle-grunge.png");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #065a82
+}
+

@@ -15,11 +15,29 @@ html {
  */
 
 body {
+  
   color: #545149;
-  background-color: #f4f1ec;
+  background-color: #d4c685;
   font-size: 24px;
 }
-
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+* {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+main {
+  width: 90%;
+  margin: 1.5em;
+  background-color: #d4c685;
+  color: #545149;
+}
+
+.bolded-text {
+  font-weight: 700;
+}
+.non-bolded-text {
+  font-weight: 300;
+}
+
