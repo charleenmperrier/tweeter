@@ -44,7 +44,11 @@ $(document).ready(() => {
   
 });
 
-
+const escape =  function(str) {
+  let div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+}
  //func for get request of tweet data
  const loadTweets = () => {
   $.get('/tweets', function(data, status) {
@@ -64,6 +68,7 @@ const renderTweets = (tweets) => {
 
 //func to take in tweet data and return article structure
 const createTweetElement = (tweetObj) => {
+  const safeHTML = `<p>${escape(tweetObj.content.text)}</p>`;
   return $(`
     <article>
       <header class="past-tweets-header">
@@ -74,7 +79,7 @@ const createTweetElement = (tweetObj) => {
         <h6 class="tweeter-handle">${tweetObj.user.handle}</h6>
       </header>
       <footer class="past-tweets-footer">
-        <p class="tweet-message">${tweetObj.content.text}</p>
+        <p class="tweet-message">${safeHTML}</p>
         <div>
           <p>${tweetObj.created_at}</p>
           <div class="tweet-icons">

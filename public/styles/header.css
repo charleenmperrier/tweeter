@@ -11,3 +11,13 @@
   color: #065a82
 }
 
+
+
+@media only screen and (min-width: 768px) {
+  .body-header {
+    
+    margin: 2%;
+    margin-top: 240px;
+    max-width: 400px;
+  }
+}

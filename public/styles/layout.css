@@ -33,31 +33,32 @@ main {
   background-color: #d4c685;
   color: #545149;
 }
+.layout-change {
+  width: 100%;
+}
 
 .bolded-text {
   font-weight: 700;
 }
+
 .non-bolded-text {
   font-weight: 300;
 }
 
 @media only screen and (min-width: 768px) {
-  body {
+  .flexible-layout {
     display: flex;
+    /* justify-content: space-between; */
   }
-  body header {
-    max-width: 30%;
-    
-    margin: 5%;
-    margin-top: 200px;
-    
 
-  }
   .layout-change {
-    display: flex;
+    /* display: flex; */
+    /* flex-grow: 2;
+    margin-right: 2%; */
+    align-items: center;
+    
   }
-
-  .new-tweet {
-    margin-top: 200px;
+  .body-header {
+    flex-grow: 1;
   }
 }
