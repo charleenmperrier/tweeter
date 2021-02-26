@@ -32,47 +32,59 @@
       <span class="logo">tweeter</span>
       <h5 class="nav-new-tweet">
         <div>
-        <span class="bolded-text">Write</span>
-        <span class="non-bolded-text"> a new tweet</span>
-      </div>
+          <span class="bolded-text">Write</span>
+          <span class="non-bolded-text"> a new tweet</span>
+        </div>
         <i class="fas fa-arrow-circle-down"></i>
       </h5>
     </nav>
+
+
     <div class="flexible-layout">
+
       <header class="body-header">
         <div class="avatar">
             <img src="/images/profile-hex.png"> 
         </div>
         <!-- <br> -->
         <div>
-            <h2>
-              <span class="bolded-text">Your</span>
-              <span class="non-bolded-text"> Name</span>
-            </h2>
+          <h2>
+            <span class="bolded-text">Your</span>
+            <span class="non-bolded-text"> Name</span>
+          </h2>
         </div>
       </header>
-    <div class="layout-change">
-      <!-- Page-specific (main) content here -->
-      <main class="container">
-        <!-- creating new tweet -->
-        <section class="new-tweet">
-          <p id="long-tweet"></p>
-          <p id="empty-tweet"></p>
-          <form class="tweet-form" method="POST" action="/tweets" >
-            <label for="tweet-text">What are you humming about?</label>
-            <textarea id="tweet-text" name="text" ></textarea>
-            <div class="tweet-div">
-              <button class="tweet-button" type="submit">Tweet it!</button>
-              <output name="counter" class="counter" for="tweet-text">140</output>
-            </div>
-          </form>
-          <!-- past tweets listed -->
-        <section id="tweet-container">
-          <!-- see client.js/createTweetElement for content of this section  -->
-        </section>
-        </section>
-      </main>
+
+      <!-- both new and past tweets  -->
+      <div class="layout-change">
+        <main class="container">
+
+          <!-- creating new tweet -->
+          <section class="new-tweet">
+            <p id="long-tweet"></p>
+            <p id="empty-tweet"></p>
+
+            <form class="tweet-form" method="POST" action="/tweets" >
+              <label for="tweet-text">What are you humming about?</label>
+              <textarea id="tweet-text" name="text" ></textarea>
+              <div class="tweet-footer">
+                <button class="tweet-button" type="submit">Tweet it!</button>
+                <output name="counter" class="counter" for="tweet-text">140</output>
+              </div>
+            </form>
+
+            <!-- past tweets listed -->
+          <section id="tweet-container">
+            <!-- see client.js/createTweetElement for content of this section  -->
+          </section>
+
+          </section>
+
+        </main>
+      </div>
+
     </div>
-  </div>
+
+
   </body>
 </html>

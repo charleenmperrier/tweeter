@@ -1,3 +1,4 @@
+/* alerts */
 #long-tweet {
   color: red;
   border: 5px solid red;
@@ -12,39 +13,40 @@
   display: none;
 }
 
+/* new tweet content  */
 .tweet-form {
   display: flex;
   flex-direction: column;
 }
+
 #tweet-text {
   outline: none;
   border: none;
   border-bottom: 5px solid;
   background-color: #d4c685;
-  /* color:  #cd6945;; */
-  /* font-size: 18px; */
 }
 
+.tweet-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1em;
+}
+
+.counter {
+  font-family: 'Bungee';
+  color: #cd6945;
+}
 .overCounter {
   color: red;
 }
 
-.tweet-div {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 1em;
-  
-}
-div output {
-  font-family: 'Bungee';
-  color: #cd6945;
-}
 .tweet-button {
   background-color: #cd6945;
   font-family: 'Bungee';
   color: white;
   border-radius: 8px;
 }
+
 
 @media only screen and (min-width: 1024px) {
   .new-tweet {

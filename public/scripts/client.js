@@ -4,6 +4,7 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+
 $(document).ready(() => {
 
   //listening for tweet submission
@@ -17,12 +18,12 @@ $(document).ready(() => {
     
     //error alerts
     if (!textLength) {
-      $('#empty-tweet').text("We don't see a tweet??? Please try again.")
+      $('#empty-tweet').text("We don't see a tweet??? Please try again.");
       $('#empty-tweet').slideDown('linear');
     }
 
     if (textLength > 140) {
-      $('#long-tweet').text("Oops that tweet is toooo looong! Please try again.") // add error message in here
+      $('#long-tweet').text("Oops that tweet is toooo looong! Please try again."); // add error message in here
       $('#long-tweet').slideDown('linear');
     }
 
@@ -35,7 +36,7 @@ $(document).ready(() => {
         $('#empty-tweet').slideUp('linear');
         $('#long-tweet').slideUp('linear');
         
-      })
+      });
     }
 
     $(".tweet-form").trigger("reset");// prevents having to reload page to see new tweets
@@ -54,14 +55,14 @@ const escape =  function(str) {
   let div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
-}
+};
  //func for get request of tweet data
  const loadTweets = () => {
   $.get('/tweets', function(data, status) {
     
     renderTweets(data);
     
-  })
+  });
 };
 
 //func to loop through the tweetObj and append new tweets
@@ -77,6 +78,7 @@ const createTweetElement = (tweetObj) => {
   const safeHTML = `<p class="tweet-message">${escape(tweetObj.content.text)}</p>`;
   return $(`
     <article>
+
       <header class="past-tweets-header">
         <div>
           <img class="profile-pic" src="${tweetObj.user.avatars}">
@@ -84,19 +86,20 @@ const createTweetElement = (tweetObj) => {
         </div>
         <h6 class="tweeter-handle">${tweetObj.user.handle}</h6>
       </header>
+
       ${safeHTML}
+
       <footer class="past-tweets-footer">
-        <div>
           <p>${tweetObj.created_at}</p>
           <div class="tweet-icons">
             <i class="fas fa-flag"></i>
             <i class="fas fa-retweet"></i>
             <i class="fas fa-heart"></i>
           </div>
-        </div>
       </footer>
+
     </article>`);
 
-}
+};
 
 

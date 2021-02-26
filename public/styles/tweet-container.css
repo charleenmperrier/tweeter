@@ -11,7 +11,7 @@
   justify-content: space-between;
   margin: .25em;
 }
-
+/* profile pic and name  */
 .past-tweets-header div {
   display: flex;
 }
@@ -36,27 +36,28 @@
   box-shadow: 10px 10px rgb(172, 125, 93);
 }
 
-/* tweet container footer  */
-.past-tweets-footer {
-  margin: 1em;
-  max-height: 75px;
-}
+/* body  */
 .tweet-message {
   border-bottom: 5px solid;
   padding: .5em;
   font-weight: 700;
   margin: 1em;
 }
-.past-tweets-footer div {
+
+/* tweet container footer  */
+.past-tweets-footer {
+  margin: 1em;
+  max-height: 75px;
   display: flex;
   justify-content: space-between;
-  padding: .5em;
-  
-}
-.past-tweets-footer div p {
-  margin: 0;
+  align-items: center;
 }
 
+/* date posted  */
+.past-tweets-footer p {
+  margin: 0;
+}
+/* spacing between icons  */
 .tweet-icons i {
   padding-right: 3px;
 }

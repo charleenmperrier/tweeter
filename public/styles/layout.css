@@ -20,19 +20,17 @@ body {
   background-color: #d4c685;
   font-size: 24px;
 }
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
+
 * {
   font-family: 'Source Sans Pro', sans-serif;
 }
 
 main {
-  
   margin: 5%;
   background-color: #d4c685;
   color: #545149;
 }
+
 .layout-change {
   width: 100%;
 }
@@ -51,14 +49,6 @@ main {
   }
   .flexible-layout {
     display: flex;
-    /* justify-content: space-between; */
   }
-
-  .layout-change {
-    align-items: center;
-  }
-  
-  .body-header {
-    flex-grow: 1;
-  }
+ 
 }
