@@ -1,13 +1,14 @@
 #tweet-container article {
   border: 5px solid;
   margin-top: 1.5em;
+  max-height: 250px;
 }
 
 /* tweet container header  */
 .past-tweets-header {
   display: flex;
   justify-content: space-between;
-  margin: 1em;
+  margin: .5em;
 }
 
 .past-tweets-header div {
@@ -38,11 +39,12 @@
   flex-direction: column;
   margin-right: 1em;
   margin-left: 1em;
+  max-height: 75px;
 }
-.tweet-message{
+.tweet-message {
   border-bottom: 5px solid;
-  padding: .5em;
-  padding-bottom: 1.5em;
+  padding: .25em;
+  padding-bottom: .5em;
   margin: 0;
 }
 .past-tweets-footer div {

@@ -68,7 +68,7 @@ const renderTweets = (tweets) => {
 
 //func to take in tweet data and return article structure
 const createTweetElement = (tweetObj) => {
-  const safeHTML = `<p>${escape(tweetObj.content.text)}</p>`;
+  const safeHTML = `<p class="tweet-message">${escape(tweetObj.content.text)}</p>`;
   return $(`
     <article>
       <header class="past-tweets-header">
@@ -79,7 +79,7 @@ const createTweetElement = (tweetObj) => {
         <h6 class="tweeter-handle">${tweetObj.user.handle}</h6>
       </header>
       <footer class="past-tweets-footer">
-        <p class="tweet-message">${safeHTML}</p>
+        <p>${safeHTML}</p>
         <div>
           <p>${tweetObj.created_at}</p>
           <div class="tweet-icons">

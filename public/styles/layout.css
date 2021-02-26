@@ -28,8 +28,8 @@ body {
 }
 
 main {
-  width: 90%;
-  margin: 1.5em;
+  
+  margin: 5%;
   background-color: #d4c685;
   color: #545149;
 }
@@ -46,6 +46,9 @@ main {
 }
 
 @media only screen and (min-width: 768px) {
+  main {
+    margin-left: 10%;
+  }
   .flexible-layout {
     display: flex;
     /* justify-content: space-between; */
