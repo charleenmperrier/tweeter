@@ -55,12 +55,9 @@ main {
   }
 
   .layout-change {
-    /* display: flex; */
-    /* flex-grow: 2;
-    margin-right: 2%; */
     align-items: center;
-    
   }
+  
   .body-header {
     flex-grow: 1;
   }

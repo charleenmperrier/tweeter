@@ -11,28 +11,34 @@ $(document).ready(() => {
       
     event.preventDefault(); //stops browser from reloading/staying on homepage
     const textInput = $('.tweet-form').serialize(); //bringing in readable text from text-box form
- 
+
+    const textLength = $('#tweet-text').val().length; // length of text-box input
+
+    
     //error alerts
-    if (textInput === 'text=') {
+    if (!textLength) {
+      $('#empty-tweet').text("We don't see a tweet??? Please try again.")
       $('#empty-tweet').slideDown('linear');
     }
 
-    // 145 to include the default 'text=' characters
-    if (textInput.length > 145) {
+    if (textLength > 140) {
+      $('#long-tweet').text("Oops that tweet is toooo looong! Please try again.") // add error message in here
       $('#long-tweet').slideDown('linear');
     }
 
     //no alert, ajax post request
-    if (textInput.length < 145) {
+    if (textLength <= 140) {
 
       $.post('/tweets', textInput, function() { 
+
         // removes error alerts after successful post
         $('#empty-tweet').slideUp('linear');
         $('#long-tweet').slideUp('linear');
+        
       })
     }
 
-    $(".tweet-form").trigger("reset");   // prevents having to reload page to see new tweets
+    $(".tweet-form").trigger("reset");// prevents having to reload page to see new tweets
 
     
     $('article').remove();  //clears tweets, then load second time
@@ -74,12 +80,12 @@ const createTweetElement = (tweetObj) => {
       <header class="past-tweets-header">
         <div>
           <img class="profile-pic" src="${tweetObj.user.avatars}">
-          <h5>${tweetObj.user.name}</h5>
+          <p>${tweetObj.user.name}</p>
         </div>
         <h6 class="tweeter-handle">${tweetObj.user.handle}</h6>
       </header>
       <footer class="past-tweets-footer">
-        <p>${safeHTML}</p>
+        ${safeHTML}
         <div>
           <p>${tweetObj.created_at}</p>
           <div class="tweet-icons">

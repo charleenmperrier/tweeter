@@ -1,21 +1,24 @@
 #tweet-container article {
   border: 5px solid;
   margin-top: 1.5em;
-  max-height: 250px;
+  min-height: 250px;
+  font-size: 20px;
 }
 
 /* tweet container header  */
 .past-tweets-header {
   display: flex;
   justify-content: space-between;
-  margin: .5em;
+  margin: .25em;
 }
 
 .past-tweets-header div {
   display: flex;
 }
+
 .profile-pic {
   padding: 10px;
+  height: 75px;
 }
 
 .tweeter-handle {
@@ -37,14 +40,14 @@
 .past-tweets-footer {
   display: flex;
   flex-direction: column;
-  margin-right: 1em;
-  margin-left: 1em;
+  margin: 1em;
+  /* margin-left: 1em; */
   max-height: 75px;
 }
 .tweet-message {
   border-bottom: 5px solid;
-  padding: .25em;
-  padding-bottom: .5em;
+  padding: .5em;
+  font-weight: 700;
   margin: 0;
 }
 .past-tweets-footer div {
