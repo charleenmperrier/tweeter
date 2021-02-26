@@ -19,9 +19,16 @@ nav {
 
 .nav-new-tweet {
   margin: 1.5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.nav-new-tweet div{
+  padding: .25em;
+  
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1024px) {
   nav {
     background-color: #cd6945;
     background-image: none;

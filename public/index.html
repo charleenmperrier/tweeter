@@ -30,9 +30,12 @@
     <!-- Top nav bar (fixed) -->
     <nav>
       <span class="logo">tweeter</span>
-      <h5 class="nav-new-tweet"> 
+      <h5 class="nav-new-tweet">
+        <div>
         <span class="bolded-text">Write</span>
         <span class="non-bolded-text"> a new tweet</span>
+      </div>
+        <i class="fas fa-arrow-circle-down"></i>
       </h5>
     </nav>
     <div class="flexible-layout">
@@ -59,7 +62,7 @@
             <label for="tweet-text">What are you humming about?</label>
             <textarea id="tweet-text" name="text" ></textarea>
             <div class="tweet-div">
-              <button class="tweet-button" type="submit">Tweet</button>
+              <button class="tweet-button" type="submit">Tweet it!</button>
               <output name="counter" class="counter" for="tweet-text">140</output>
             </div>
           </form>

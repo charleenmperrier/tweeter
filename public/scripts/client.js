@@ -84,8 +84,8 @@ const createTweetElement = (tweetObj) => {
         </div>
         <h6 class="tweeter-handle">${tweetObj.user.handle}</h6>
       </header>
+      ${safeHTML}
       <footer class="past-tweets-footer">
-        ${safeHTML}
         <div>
           <p>${tweetObj.created_at}</p>
           <div class="tweet-icons">
