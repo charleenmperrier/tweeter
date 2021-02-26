@@ -90,7 +90,7 @@ const createTweetElement = (tweetObj) => {
       ${safeHTML}
 
       <footer class="past-tweets-footer">
-          <p>${tweetObj.created_at}</p>
+          <p>${dateOfTweet(tweetObj.created_at)}</p>
           <div class="tweet-icons">
             <i class="fas fa-flag"></i>
             <i class="fas fa-retweet"></i>
@@ -102,4 +102,23 @@ const createTweetElement = (tweetObj) => {
 
 };
 
-
+//converting the timestamp
+const dateOfTweet = function(timestamp) {
+  const howLongAgoMilliseconds = Date.now() - timestamp;
+  const millsecondsPerMin = 1000*60;
+  const millsecondsPerHour = 1000*60*60;
+  const millsecondsPerDay = 1000*60*60*24;
+  if (howLongAgoMilliseconds > millsecondsPerDay) {
+    const howLongAgoDays = Math.ceil(howLongAgoMilliseconds / millsecondsPerDay);
+    return `${howLongAgoDays} days ago`;
+  }
+  if (howLongAgoMilliseconds > millsecondsPerHour) {
+    const howLongAgoHours = Math.ceil(howLongAgoMilliseconds / millsecondsPerHour);
+    return `${howLongAgoHours} hours ago`;
+  }
+  if (howLongAgoMilliseconds > millsecondsPerMin) {
+    const howLongAgoMins = Math.ceil(howLongAgoMilliseconds / millsecondsPerMin);
+    return `${howLongAgoMins} minutes ago`
+  }
+  return "just now"
+};
