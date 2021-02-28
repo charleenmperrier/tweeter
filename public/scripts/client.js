@@ -20,6 +20,7 @@ $(document).ready(() => {
     if (!textLength) {
       $('#empty-tweet').text("We don't see a tweet??? Please try again.");
       $('#empty-tweet').slideDown('linear');
+
     }
 
     if (textLength > 140) {
@@ -27,23 +28,25 @@ $(document).ready(() => {
       $('#long-tweet').slideDown('linear');
     }
 
+    const minTweetRange = 0;
+    const maxTweetRange = 140;
     //no alert, ajax post request
-    if (textLength <= 140) {
+    if (textLength > minTweetRange && textLength <= maxTweetRange) {
+      console.log("test");
+      console.log("text.length: ", textLength);
+
+      $('#empty-tweet').slideUp('linear'); // removes error alerts after successful post
+      $('#long-tweet').slideUp('linear');
 
       $.post('/tweets', textInput, function() { 
-
-        // removes error alerts after successful post
-        $('#empty-tweet').slideUp('linear');
-        $('#long-tweet').slideUp('linear');
         
+        $(".tweet-form").trigger("reset"); // clears text box
+        
+        $('article').remove();  //clears tweets, then load second time
+        loadTweets();
+       
       });
     }
-
-    $(".tweet-form").trigger("reset");// prevents having to reload page to see new tweets
-
-    
-    $('article').remove();  //clears tweets, then load second time
-    loadTweets();
 
   });
 
