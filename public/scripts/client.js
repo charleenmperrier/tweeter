@@ -28,21 +28,19 @@ $(document).ready(() => {
       $('#long-tweet').slideDown('linear');
     }
 
-    const minTweetRange = 0;
-    const maxTweetRange = 140;
+   
     //no alert, ajax post request
-    if (textLength > minTweetRange && textLength <= maxTweetRange) {
-      console.log("test");
-      console.log("text.length: ", textLength);
-
-      $('#empty-tweet').slideUp('linear'); // removes error alerts after successful post
+    if (textLength > 0 && textLength <= 140) {
+    
+      // removes error alerts after successful tweet input
+      $('#empty-tweet').slideUp('linear'); 
       $('#long-tweet').slideUp('linear');
 
       $.post('/tweets', textInput, function() { 
         
-        $(".tweet-form").trigger("reset"); // clears text box
-        
-        $('article').remove();  //clears tweets, then load second time
+        $(".tweet-form").trigger("reset"); // clears tweet in input after posting
+
+        $('article').remove();  //clears all past tweets, then load newly updated tweet container
         loadTweets();
        
       });
@@ -50,10 +48,11 @@ $(document).ready(() => {
 
   });
 
-  loadTweets();   // first load of tweets
+  loadTweets();   // loads all tweets on page
   
 });
 
+//secure input of text
 const escape =  function(str) {
   let div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
